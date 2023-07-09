@@ -29,6 +29,6 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "\033[0;33m Secen Bug & Crot Crot \033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-read -p "Masukan Domain Bug: " domain
+read -p "Masukan Domain Bug: " bug
 
-wget -O begeg "https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan_bug.sh" && chmod +x begeg && ./begeg ${domain}
+wget -O begeg "https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan_bug.sh" && chmod +x begeg && ./begeg ${bug}
