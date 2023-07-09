@@ -43,7 +43,7 @@ read -p " Select menu :  "  opt
 echo -e ""
 case $opt in
 1) clear ; sc ; exit ;;
-2) clear ; cari-bug ; exit ;;
+2) clear ; wget https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan.sh && chmod +x scan.sh && ./scan.sh ; exit ;;
 3) clear ; global ; exit ;;
 4) clear ; nf ; exit ;;
 0) clear ; menu ; exit ;;
