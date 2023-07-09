@@ -28,7 +28,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 echo -e " [\e[36m•1\e[0m] Secend Domain/IP Bug Websocket "
 echo -e " [\e[36m•2\e[0m] Cari Bug "
-echo -e " [\e[36m•3\e[0m] Extending Account Vmess "
+echo -e " [\e[36m•3\e[0m] Test Speed Global "
 echo -e " [\e[36m•4\e[0m] Delete Account Vmess "
 echo -e " [\e[36m•5\e[0m] Check User Login Vmess "
 echo -e ""
@@ -43,7 +43,7 @@ echo -e ""
 case $opt in
 1) clear ; begeg ; exit ;;
 2) clear ; cari-bug ; exit ;;
-3) clear ; renew-ws ; exit ;;
+3) clear ; global ; exit ;;
 4) clear ; del-ws ; exit ;;
 5) clear ; cek-ws ; exit ;;
 0) clear ; menu ; exit ;;
