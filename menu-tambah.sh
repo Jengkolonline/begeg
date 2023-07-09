@@ -42,7 +42,7 @@ echo -e ""
 read -p " Select menu :  "  opt
 echo -e ""
 case $opt in
-1) clear ; begeg ; exit ;;
+1) clear ; sc ; exit ;;
 2) clear ; cari-bug ; exit ;;
 3) clear ; global ; exit ;;
 4) clear ; nf ; exit ;;
