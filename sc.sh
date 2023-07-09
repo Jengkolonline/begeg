@@ -31,4 +31,4 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 read -p "Masukan Domain Bug: " domain
 
-bash begeg $domain
+./begeg $domain
