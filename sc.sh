@@ -30,4 +30,5 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 read -p "Masukan Domain Bug: " bug
 
-wget -O begeg "https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan_bug.sh" && chmod +x begeg && ./begeg ${bug}
+wget https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan_bug.sh && chmod +x scan_bug.sh
+bash scan_bug.sh ${bug}
