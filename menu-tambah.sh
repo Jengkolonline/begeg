@@ -32,6 +32,7 @@ echo -e " \033[32m╭═══════════════════�
 echo -e " \033[35m│$NC [01]${NC} \033[0;36m Cari Bug Clondflare${NC}"
 echo -e " \033[35m│$NC [02]${NC} \033[0;36m Monitor & Speed Test Global${NC}"
 echo -e " \033[35m│$NC [03]${NC} \033[0;36m Install DNS Netflix,Hostar,YT,TikTok,iQiyi,Viu,Strem${NC}"
+echo -e " \033[35m│$NC [04]${NC} \033[0;36m Info All Port${NC}"
 echo -e " \033[35m│$NC"
 echo -e " \033[35m│$NC [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
 echo -e " \033[35m│$NC"
@@ -47,6 +48,7 @@ case $opt in
 1) clear ; wget https://raw.githubusercontent.com/Jengkolonline/begeg/main/scan.sh && chmod +x scan.sh && ./scan.sh ; exit ;;
 2) clear ; global ; exit ;;
 3) clear ; nf ; exit ;;
+4) clear ; prot ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu ;;
