@@ -1,0 +1,175 @@
+#!/bin/bash
+clear
+red() { echo -e "\\033[32;1m${*}\\033[0m"; }
+clear
+#IZIN SCRIPT
+MYIP=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m"
+clear
+# Valid Script
+export CHATID="1830342336"
+export KEY="6320035110:AAE6otySdlNHPhKom2PNtp8yZn8X8rZS7LE"
+export TIME="10"
+export URL="https://api.telegram.org/bot$KEY/sendMessage"
+clear
+#IZIN SCRIPT
+MYIP=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m"
+clear
+# Valid Script
+VALIDITY () {
+    today=`date -d "0 days" +"%Y-%m-%d"`
+    Exp1=$(curl https://raw.githubusercontent.com/Jegkolonline/izinn/main/ip | grep $MYIP | awk '{print $4}')
+    if [[ $today < $Exp1 ]]; then
+    echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m"
+    else
+echo -e "${Lyellow}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e "${Lred}                PERMISSION DENIED ! ${NC}"
+echo -e "${Lyellow}     Your VPS ${NC}( ${green}$MYIP${NC} ) ${Lyellow}Has been Banned "
+echo -e "         Buy access permissions for scripts "
+echo -e "                 Contact Admin :"
+echo -e "             ${green}Telegram t.me/Jengkol_Online "
+echo -e "             WhatsApp wa.me/6282372139631"
+echo -e "${Lyellow}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    exit 0
+fi
+}
+IZIN=$(curl https://raw.githubusercontent.com/Jengkolonline/izinn/main/ip | awk '{print $5}' | grep $MYIP)
+if [ $MYIP = $IZIN ]; then
+echo -e "\e[32mPermission Accepted...\e[0m" >/dev/null 2>&1
+VALIDITY
+else
+echo -e "\e[31mPermission Denied!\e[0m";
+echo -e "\e[31mPlease buy script first\e[0m"
+exit 0
+fi
+echo -e "\e[32mloading...\e[0m"
+clear
+IP=$(curl -sS ipv4.icanhazip.com)
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+domain=$(cat /etc/xray/domain)
+clear
+echo -e "\033[1;93m====================\033[0m"
+echo -e " SSH Ovpn Account           "
+echo -e "\033[1;93m====================\033[0m"
+read -p " Username : " Login
+read -p " Password : " Pass
+read -p " Expired (Days): " masaaktif
+clear
+tgl=$(date -d "$masaaktif days" +"%d")
+bln=$(date -d "$masaaktif days" +"%b")
+thn=$(date -d "$masaaktif days" +"%Y")
+expe="$tgl $bln, $thn"
+tgl2=$(date +"%d")
+bln2=$(date +"%b")
+thn2=$(date +"%Y")
+tnggl="$tgl2 $bln2, $thn2"
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+expi="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
+hariini=`date -d "0 days" +"%Y-%m-%d"`
+expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
+echo "### ${Login} ${Pass} ${exp}" >>/etc/ssh/.ssh.db
+
+cat >/var/www/html/ssh-$Login.txt <<-END
+====================
+JengkolOnline Tunneling
+====================
+SSH OVPN Account    
+====================
+Username         : $Login
+Password         : $Pass
+IP               : $IP
+Host             : $domain
+Host Slowdns     : ${NS}
+Pub Key          : ${PUB}
+Location         : $CITY
+Port OpenSSH     : 443, 80, 22
+Port DNS         : 443, 53 ,22 
+Port SSH UDP     : 1-65535
+Port Dropbear    : 443, 109
+Port SSH WS      : 80, 8080, 8081-9999
+Port SSH SSL WS  : 443
+SSH-NOSSL-WS     : 8880
+Port SSL/TLS     : 442,443,444,777
+Port OVPN WS SSL : 443
+Port OVPN SSL    : 443
+Port OVPN TCP    : 443, 1194
+Port OVPN UDP    : 2200
+OHP Dropbear     : 8585
+OHP SSH          : 8686
+OHP OpenVPN      : 8787
+BadVPN UDP       : 7100, 7300, 7300
+====================
+Tinggal Copy Prot 80  : ${domain}:80@${Login}:${Pass}
+Tinggal Copy Prot 443 : ${domain}:443@${Login}:${Pass}
+====================
+UDP Account : ${domain}:1-65535@${Login}:${Pass}
+====================
+Link Download OpenVpn
+OpenVpn TCP     : https://${domain}:81/tcp.ovpn
+OpenVpn UDP     : https://${domain}:81/udp.ovpn
+OpenVpn SSL     : https://${domain}:81/ssl.ovpn
+OpenVpn ws SSL  : https://${domain}:81/ws-ssl.ovpn
+OpenVpn All Zip : https://${domain}:81/Geo-Project.zip
+====================
+Link Download OHP
+OpenVPN OHP      : 8787 http://$MYIP:81/client-tcp-ohp1194.ovpn
+====================
+Payload WSS      : GET wss://BUG.COM/ HTTP/1.1[crlf]Host: $domain[crlf]Upgrade: websocket[crlf][crlf]
+====================
+Berakhir Pada    : $expe
+====================
+END
+clear
+
+echo ""
+echo -e "\033[1;93m====================\033[0m"
+echo -e " SSH OVPN Account    "
+echo -e "\033[1;93m====================\033[0m"
+echo -e "Username         : $Login"
+echo -e "Password         : $Pass"
+echo -e "IP               : $IP"
+echo -e "Host             : $domain"
+echo -e "Host Slowdns     : ${NS}"
+echo -e "Pub Key          : ${PUB}"
+echo -e "Location         : $CITY"
+echo -e "Port OpenSSH     : 443, 80, 22"
+echo -e "Port DNS         : 443, 53 ,22 "
+echo -e "Port SSH UDP     : 1-65535"
+echo -e "Port Dropbear    : 443, 109"
+echo -e "Port SSH WS      : 80, 8080, 8081-9999"
+echo -e "Port SSH SSL WS  : 443"
+echo -e "SSH-NOSSL-WS     : 8880"
+echo -e "Port SSL/TLS     : 442,443,444,777"
+echo -e "Port OVPN WS SSL : 443"
+echo -e "Port OVPN SSL    : 443"
+echo -e "Port OVPN TCP    : 443, 1194"
+echo -e "Port OVPN UDP    : 2200"
+echo -e "OHP Dropbear     : 8585"
+echo -e "OHP SSH          : 8686"
+echo -e "OHP OpenVPN      : 8787"
+echo -e "BadVPN UDP       : 7100, 7300, 7300"
+echo -e "\033[1;93m====================\033[0m"
+echo -e "Tinggal Copy Prot 80  : ${domain}:80@${Login}:${Pass}"
+echo -e "Tinggal Copy Prot 443 : ${domain}:443@${Login}:${Pass}"
+echo -e "\033[1;93m====================\033[0m"
+echo -e " UDP Account : ${domain}:1-65535@${Login}:${Pass}"
+echo -e "\033[1;93m====================\033[0m"
+echo -e "Link Download OpenVpn"
+echo -e "OpenVpn TCP     : https://${domain}:81/tcp.ovpn"
+echo -e "OpenVpn UDP     : https://${domain}:81/udp.ovpn"
+echo -e "OpenVpn SSL     : https://${domain}:81/ssl.ovpn"
+echo -e "OpenVpn ws SSL  : https://${domain}:81/ws-ssl.ovpn"
+echo -e "OpenVpn All Zip : https://${domain}:81/Geo-Project.zip"
+echo -e "\033[1;93m====================\033[0m"
+echo -e "Link Download OHP"
+echo -e "OpenVPN OHP : 8787 http://$MYIP:81/client-tcp-ohp1194.ovpn"
+echo -e "\033[1;93m====================\033[0m"
+echo -e "Payload WSS      : GET wss://BUG.COM/ HTTP/1.1[crlf]Host: $domain[crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "\033[1;93m====================\033[0m"
+echo -e "Link Txt : https://${domain}:81/ssh-${Login}.txt"
+echo -e "\033[1;93m====================\033[0m"
+echo -e "Berakhir Pada    : $expe"
+echo -e "\033[1;93m====================\033[0m"
